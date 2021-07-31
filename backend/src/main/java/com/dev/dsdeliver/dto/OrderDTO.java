@@ -10,9 +10,9 @@ import com.dev.dsdeliver.model.Order;
 import com.dev.dsdeliver.model.OrderStatus;
 
 public class OrderDTO implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String address;
 	private Double longitude;
@@ -41,8 +41,7 @@ public class OrderDTO implements Serializable {
 		latitude = order.getLatitude();
 		moment = order.getMoment();
 		status = order.getStatus();
-		list = order.getProducts().stream()
-				.map(x -> new ProductDTO(x)).collect(Collectors.toList());
+		list = order.getProducts().stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
 
 	public Long getId() {

@@ -22,4 +22,10 @@ public class OrderService {
 		List<Order> list = orderRepository.findAll();
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
+	
+	@Transactional(readOnly = true)
+	public List<OrderDTO> findAllOrdenado() {
+		List<Order> list = orderRepository.findOrdersWithProducts();
+		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
+	}
 }

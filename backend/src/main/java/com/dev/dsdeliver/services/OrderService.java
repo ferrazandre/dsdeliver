@@ -37,15 +37,22 @@ public class OrderService {
 		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
 
-	@SuppressWarnings("deprecation")
 	@Transactional
 	public OrderDTO insert(OrderDTO dto) {
 		Order order = new Order(null, dto.getAddress(), dto.getLongitude(), dto.getLatitude(), Instant.now(),
 				OrderStatus.PENDING);
 		for (ProductDTO p : dto.getList()) {
-			Product product = productRepository.getOne(p.getId());
+			Product product = productRepository.getById(p.getId());
 			order.getProducts().add(product);
 		}
+		order = orderRepository.save(order);
+		return new OrderDTO(order);
+	}
+	
+	@Transactional
+	public OrderDTO setDelivered(Long id) {
+		Order order = orderRepository.getById(id);
+		order.setStatus(OrderStatus.DELIVERED);
 		order = orderRepository.save(order);
 		return new OrderDTO(order);
 	}

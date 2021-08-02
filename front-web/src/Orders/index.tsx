@@ -9,7 +9,6 @@ import { Product } from "./types";
 function Orders(){
     
     const [products, setProducts] = useState<Product[]>([]);
-    console.log(products);
 
     useEffect(() => {
         fetchProducts()

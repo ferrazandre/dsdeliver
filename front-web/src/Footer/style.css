@@ -1,0 +1,16 @@
+.main-footer{
+    text-align: center;
+    margin-top:  5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--dark-color);
+}
+.footer-direitos{
+    font-weight: bold;
+    opacity: 0.5;
+    color: white;
+    
+}
+.footer-icons{
+    font-weight: bold;
+}

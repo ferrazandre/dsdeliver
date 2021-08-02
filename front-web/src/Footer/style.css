@@ -6,7 +6,7 @@
     background-color: var(--dark-color);
 }
 .footer-direitos{
-    font-weight: bold;
+    font-weight: normal;
     opacity: 0.5;
     color: white;
     

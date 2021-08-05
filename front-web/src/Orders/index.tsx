@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { fetchProducts } from "../api";
+import OrderLocation from "./OrderLocation";
 import ProductList from "./ProductList";
 import StepHeader from "./StepHeader";
 import "./style.css";
@@ -20,6 +21,7 @@ function Orders(){
         <div className="order-container">
             <StepHeader></StepHeader>
             <ProductList products={products}></ProductList>
+            <OrderLocation></OrderLocation>
         </div>
     )
 }

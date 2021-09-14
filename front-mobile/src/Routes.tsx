@@ -10,10 +10,11 @@ function Routes(){
      return(
          <NavigationContainer> 
              <Stack.Navigator
-                headerMode= "none"
                 screenOptions={{
+                    headerShown: false,
                     cardStyle: {
                         backgroundColor:'#FFF'
+                        
                     }
                 }}
             >
